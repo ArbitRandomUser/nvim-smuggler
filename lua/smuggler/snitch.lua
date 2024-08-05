@@ -31,10 +31,11 @@ function M.snitch(bufnbr, response)
   end
   config.debug("Created the diagnostic list", diagnostics)
   vim.diagnostic.set(namespace, bufnbr, diagnostics, {})
-  vim.diagnostic.setloclist({
-    namespace=namespace,
-    title="REPL error: " .. exception_text,
-  })
+  --vim.diagnostic.setloclist({
+  --  namespace=namespace,
+  --  title="REPL error: " .. exception_text,
+  --})
+  --vim.cmd("lcl")
   vim.diagnostic.show(namespace, bufnbr)
 end
 
